@@ -21,6 +21,55 @@
   background: var(--scroll-bg-hover-color);
 } */
 
+
+:root{
+  --bg-body-color: white;
+  --all-body-title: #01353e;
+
+  --sun-img: url(../img/sun_white.png);
+  --home-bg: url(../img/Bg-home.png);
+  --home-title-color: #0d302c;
+  --home-title-color2: black;
+  --about-desc-color: #242121;
+  --services-bg-color: #f8f8f8;
+  --gallery-title-color: #242121;
+  --btn-bg-style: #ffff;
+  --btn-color: #242121;
+  --quote-bg: #f8f8f8;
+  --quote-text-color: #242121;
+
+  --scrore-number-tourists-text-color: #01353e;
+  --our-command-color-text: #242121;
+  --card-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --contact-bg-color-right-block: #f8f8f8;
+  --contact-color-right-block: black;
+  --footer-bg: #00b2a0;
+}
+
+:root[data-theme="dark"]{
+  --all-body-title: white;
+  --sun-img: url(../img/moon.png);
+  --home-bg: url(../img/home-bg-black.png);
+  --home-title-color: white;
+  --home-title-color2: white;
+  --bg-body-color: #020910;
+  --about-desc-color: #d5e1e3;
+  --services-bg-color:  #020910;
+  --gallery-title-color: white;
+  --btn-color: white;
+  --btn-bg-style: ;
+  --quote-bg: #000a14;
+  --quote-text-color: white;
+
+  --scrore-number-tourists-text-color: white;
+  --our-command-color-text: white;
+  --card-box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(131, 131, 131, 0.19);
+  --contact-bg-color-right-block: #0d141c;
+  --contact-color-right-block: white;
+
+  --footer-bg: #0d141c;
+}
+
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   opacity: 1;
@@ -55,6 +104,10 @@ input[type="number"] {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+body{
+  background-color: var(--bg-body-color);
+}
+
 #container {
   max-width: 1920px;
   margin: 0 auto;
@@ -65,7 +118,7 @@ input[type="number"] {
 #home {
   min-height: 1090px;
 
-  background-image: url(../img/Bg-home.png);
+  background: var(--home-bg) rgba(0, 0, 0, 0.19);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -109,6 +162,18 @@ header ul li a {
   transition: all 0.2s ease-in-out;
 }
 
+.sun {
+  background-image: var(--sun-img);
+  width: 35px;
+  height: 35px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  transition: all 0.4s ease-in-out;
+}
+
 header ul li a:hover {
   border-bottom: 1px solid #00b2a0;
 }
@@ -126,7 +191,12 @@ header ul li a:hover {
   font-weight: 700;
   font-size: 200px;
   line-height: 235px;
-  color: #0d302c;
+  color: var(--home-title-color);
+
+  transition: color 1s ease-in-out;
+
+  animation-duration: 3s;
+  animation-name: slidein;
 }
 .home_body p {
   font-family: "Roboto Condensed";
@@ -135,6 +205,24 @@ header ul li a:hover {
   font-size: 24px;
   line-height: 28px;
   text-align: center;
+  color: var(--home-title-color2);
+
+  transition: color 1s ease-in-out;
+
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .home_btn_icon {
@@ -165,7 +253,7 @@ header ul li a:hover {
   font-size: 48px;
   line-height: 56px;
 
-  color: #01353e;
+  color: var( --all-body-title);
   margin-bottom: 96px;
 }
 
@@ -187,7 +275,7 @@ header ul li a:hover {
   font-size: 16px;
   line-height: 22px;
 
-  color: #242121;
+  color: var(--about-desc-color);
   margin-bottom: 30px;
 }
 
@@ -196,7 +284,7 @@ header ul li a:hover {
 /* Start About */
 
 #services {
-  background-color: #f8f8f8;
+  background-color: var(--services-bg-color);
 
   display: flex;
   flex-direction: column;
@@ -211,6 +299,8 @@ header ul li a:hover {
   gap: 74px;
 
   margin-bottom: 102px;
+
+  color: var(--about-desc-color);
 }
 
 .services_item {
@@ -259,6 +349,7 @@ header ul li a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 254px;
+  color: var(--about-desc-color);
 }
 
 .service_desc p {
@@ -299,15 +390,10 @@ header ul li a:hover {
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 30px;
+  color: var(--about-desc-color);
 }
 
 .costs_bg {
-  /* background: url(../img/cost-img-serfing.png);
-  background-repeat: no-repeat;
-  background-position: top right; */
-  /* width: 50vw;
-  height: auto; */
-  /* z-index: -1; */
   position: absolute;
   right: 0;
   top: 0;
@@ -315,12 +401,7 @@ header ul li a:hover {
 }
 
 .costs_bg img {
-  /* position: absolute;
-  top: 0;
-  right: 0; */
-
-  /* width: 50vw;
-  height: 45vw; */
+ 
 }
 
 /* End Costs */
@@ -365,7 +446,7 @@ header ul li a:hover {
   line-height: 18px;
 
   margin-bottom: 50px;
-  color: #242121;
+  color: var(--gallery-title-color);
 
   transition: all 0.5s ease-in-out;
   cursor: pointer;
@@ -403,9 +484,9 @@ header ul li a:hover {
   height: 70px;
   margin-top: 50px;
 
-  background: #ffffff;
+  background: var(--btn-bg-style);
   border: 1px solid #c4c4c4;
-  color: #242121;
+  color: var(--btn-color);
   transition: all 0.5s ease-in-out;
 }
 
@@ -541,7 +622,7 @@ img {
 /* Start Quote---------------------- */
 
 #quote {
-  background: #f8f8f8;
+  background: var(--quote-bg);
 }
 
 .quote_texts {
@@ -564,7 +645,7 @@ img {
   line-height: 40px;
   letter-spacing: 0.6px;
 
-  color: #242121;
+  color: var(--quote-text-color);
 }
 
 .quote_text p {
@@ -576,7 +657,7 @@ img {
 
   letter-spacing: 0.6px;
   text-align: right;
-  color: #242121;
+  color: var(--quote-text-color);
 }
 
 /* End Quote---------------------- */
@@ -645,22 +726,125 @@ img {
 }
 
 .scrore_number_tourists h1 {
-  color: #01353e;
+  color: var(--scrore-number-tourists-text-color);
 
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 700;
   font-size: 64px;
   line-height: 75px;
+  
 }
 
 .scrore_number_tourists p {
+  color: var(--scrore-number-tourists-text-color);
+
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 22px;
   text-align: center;
+}
+
+
+@property --num1 {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.score_title1{
+  animation: counter1 6s infinite ease-in-out;
+  counter-reset: num var(--num1);
+}
+.score_title1::after {
+  content: counter(num);
+}
+
+.score_title1:hover {
+  --num1: 450;
+}
+
+@keyframes counter1 {
+  from {
+    --num1: 0;
+  }
+  to {
+    --num1: 450;
+  }
+}
+
+
+@property --num2 {
+  syntax: "<integer>";
+  initial-value: 2500;
+  inherits: false;
+}
+
+.score_title2{
+  animation: counter2 6s infinite ease-in-out;
+  counter-reset: num2 var(--num2);
+}
+.score_title2::after {
+  content: counter(num2);
+}
+
+@keyframes counter2 {
+  from {
+    --num2: 0;
+  }
+  to {
+    --num2: 2500;
+  }
+}
+
+
+@property --num3 {
+  syntax: "<integer>";
+  initial-value: 10;
+  inherits: false;
+}
+
+.score_title3{
+  animation: counter3 6s infinite ease-in-out;
+  counter-reset: num3 var(--num3);
+}
+.score_title3::after {
+  content: counter(num3);
+}
+
+@keyframes counter3 {
+  from {
+    --num3: 0;
+  }
+  to {
+    --num3: 10;
+  }
+}
+
+
+@property --num4 {
+  syntax: "<integer>";
+  initial-value: 365;
+  inherits: false;
+}
+
+.score_title4{
+  animation: counter4 6s infinite ease-in-out;
+  counter-reset: num4 var(--num4);
+}
+.score_title4::after {
+  content: counter(num4);
+}
+
+@keyframes counter4 {
+  from {
+    --num4: 0;
+  }
+  to {
+    --num4: 365;
+  }
 }
 
 /* End score---------------------- */
@@ -749,7 +933,7 @@ img {
 
 .cards_card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: var(--card-box-shadow);
 }
 
 .cards_card img {
@@ -765,7 +949,7 @@ img {
   font-size: 18px;
   line-height: 18px;
   text-align: center;
-  color: #242121;
+  color: var(--our-command-color-text);
 }
 
 .cards_card p {
@@ -775,7 +959,7 @@ img {
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  color: #242121;
+  color: var(--our-command-color-text);
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -787,7 +971,7 @@ img {
 /* Start Services---------------------- */
 
 #package_services {
-  background-color: #f8f8f8;
+  background-color: var(--services-bg-color);
 }
 
 .package_services_title {
@@ -796,7 +980,7 @@ img {
   font-weight: 600;
   font-size: 48px;
   line-height: 56px;
-  color: #01353e;
+  color: var(--all-body-title);
   margin-bottom: 212px;
 
   text-align: center;
@@ -829,7 +1013,7 @@ img {
 
 .package_services_card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: var(--card-box-shadow);
 }
 
 .package_service_title_card {
@@ -839,7 +1023,7 @@ img {
   font-size: 36px;
   line-height: 40px;
 
-  color: #01353e;
+  color: var();
   text-align: center;
   margin-bottom: 58px;
 }
@@ -924,6 +1108,7 @@ form input {
   border-left: none;
   border-right: none;
   border-bottom: 2px solid #dadada;
+  background-color: transparent;
 
   margin-bottom: 32px;
   color: #00b2a0;
@@ -954,6 +1139,8 @@ form textarea {
   height: 156px;
   padding: 5px;
   color: #00b2a0;
+
+  background-color: transparent;
 }
 
 form textarea:focus {
@@ -963,13 +1150,14 @@ form textarea:focus {
 .contact_block_right {
   width: 600px;
   height: auto;
-  background: #f8f8f8;
+  background: var(--contact-bg-color-right-block);
 
   padding: 49px 0 71px 52px;
 }
 
 .block_right_desc {
   margin-bottom: 65px;
+  color: var(--contact-color-right-block) ;
 }
 
 .contat_socials {
@@ -994,7 +1182,7 @@ form textarea:focus {
   line-height: 18px;
 
   text-decoration: none;
-  color: #242121;
+  color: var(--home-title-color);
   transition: all 0.5s ease-in-out;
 }
 
@@ -1006,7 +1194,7 @@ form textarea:focus {
 /* Start Footer---------------------- */
 
 footer {
-  background: #00b2a0;
+  background: var(--footer-bg);
 }
 
 .footer_logo {
