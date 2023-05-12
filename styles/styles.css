@@ -397,7 +397,7 @@ header ul li a:hover {
   position: absolute;
   right: 0;
   top: 0;
-  width: 50vw;
+  /* width: 50vw; */
 }
 
 .costs_bg img {
