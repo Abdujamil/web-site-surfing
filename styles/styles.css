@@ -21,8 +21,7 @@
   background: var(--scroll-bg-hover-color);
 } */
 
-
-:root{
+:root {
   --bg-body-color: white;
   --all-body-title: #01353e;
 
@@ -37,16 +36,17 @@
   --btn-color: #242121;
   --quote-bg: #f8f8f8;
   --quote-text-color: #242121;
-
+  --service-bg-img: url(../img/services-img.png);
   --scrore-number-tourists-text-color: #01353e;
   --our-command-color-text: #242121;
-  --card-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --card-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --contact-bg-color-right-block: #f8f8f8;
   --contact-color-right-block: black;
   --footer-bg: #00b2a0;
 }
 
-:root[data-theme="dark"]{
+:root[data-theme="dark"] {
   --all-body-title: white;
   --sun-img: url(../img/moon.png);
   --home-bg: url(../img/home-bg-black.png);
@@ -54,16 +54,17 @@
   --home-title-color2: white;
   --bg-body-color: #020910;
   --about-desc-color: #d5e1e3;
-  --services-bg-color:  #020910;
+  --services-bg-color: #020910;
   --gallery-title-color: white;
   --btn-color: white;
   --btn-bg-style: ;
   --quote-bg: #000a14;
   --quote-text-color: white;
-
+  --service-bg-img: url(../img/servivce-img-black.png);
   --scrore-number-tourists-text-color: white;
   --our-command-color-text: white;
-  --card-box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(131, 131, 131, 0.19);
+  --card-box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
+    0 6px 20px 0 rgba(131, 131, 131, 0.19);
   --contact-bg-color-right-block: #0d141c;
   --contact-color-right-block: white;
 
@@ -104,7 +105,7 @@ input[type="number"] {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-body{
+body {
   background-color: var(--bg-body-color);
 }
 
@@ -253,7 +254,7 @@ header ul li a:hover {
   font-size: 48px;
   line-height: 56px;
 
-  color: var( --all-body-title);
+  color: var(--all-body-title);
   margin-bottom: 96px;
 }
 
@@ -344,6 +345,14 @@ header ul li a:hover {
   line-height: 28px;
 }
 
+.service_bg {
+  background-image: var(--service-bg-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 346px;
+  height: 149px;
+}
+
 .service_desc {
   display: flex;
   align-items: center;
@@ -397,11 +406,11 @@ header ul li a:hover {
   position: absolute;
   right: 0;
   top: 0;
+  z-index: -1;
   /* width: 50vw; */
 }
 
 .costs_bg img {
- 
 }
 
 /* End Costs */
@@ -473,7 +482,8 @@ header ul li a:hover {
   margin-bottom: 30px;
 }
 
-.gallery_btn_show_more, .gallery_btn_show_more_hidden {
+.gallery_btn_show_more,
+.gallery_btn_show_more_hidden {
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 400;
@@ -501,6 +511,14 @@ header ul li a:hover {
 }
 
 .gallerry_images {
+}
+
+.gallery_item {
+  transition: all .3s ease-in-out;
+}
+
+.gallery_item:hover {
+  transform: scale(1.2);
 }
 
 img {
@@ -537,7 +555,7 @@ img {
     grid-template-rows: repeat(2, 300px);
     grid-auto-flow: row dense;
 
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   .gallery_item {
@@ -557,7 +575,6 @@ img {
   .gallery_item:nth-child(8) {
     grid-row: span 2;
   }
-
 
   .gallerry_images_2 {
     display: grid;
@@ -733,7 +750,6 @@ img {
   font-weight: 700;
   font-size: 64px;
   line-height: 75px;
-  
 }
 
 .scrore_number_tourists p {
@@ -747,14 +763,13 @@ img {
   text-align: center;
 }
 
-
 @property --num1 {
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
 
-.score_title1{
+.score_title1 {
   animation: counter1 6s infinite ease-in-out;
   counter-reset: num var(--num1);
 }
@@ -775,14 +790,13 @@ img {
   }
 }
 
-
 @property --num2 {
   syntax: "<integer>";
   initial-value: 2500;
   inherits: false;
 }
 
-.score_title2{
+.score_title2 {
   animation: counter2 6s infinite ease-in-out;
   counter-reset: num2 var(--num2);
 }
@@ -799,14 +813,13 @@ img {
   }
 }
 
-
 @property --num3 {
   syntax: "<integer>";
   initial-value: 10;
   inherits: false;
 }
 
-.score_title3{
+.score_title3 {
   animation: counter3 6s infinite ease-in-out;
   counter-reset: num3 var(--num3);
 }
@@ -823,14 +836,13 @@ img {
   }
 }
 
-
 @property --num4 {
   syntax: "<integer>";
   initial-value: 365;
   inherits: false;
 }
 
-.score_title4{
+.score_title4 {
   animation: counter4 6s infinite ease-in-out;
   counter-reset: num4 var(--num4);
 }
@@ -1157,7 +1169,7 @@ form textarea:focus {
 
 .block_right_desc {
   margin-bottom: 65px;
-  color: var(--contact-color-right-block) ;
+  color: var(--contact-color-right-block);
 }
 
 .contat_socials {
