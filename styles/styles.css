@@ -1281,12 +1281,12 @@ img {
 
 @property --num1 {
   syntax: "<integer>";
-  initial-value: 0;
+  initial-value: 450;
   inherits: false;
 }
 
 .score_title1 {
-  animation: counter1 6s infinite ease-in-out;
+  animation: counter1 5s ease-in-out;
   counter-reset: num var(--num1);
 }
 .score_title1::after {
@@ -1313,7 +1313,7 @@ img {
 }
 
 .score_title2 {
-  animation: counter2 6s infinite ease-in-out;
+  animation: counter2 5s ease-in-out;
   counter-reset: num2 var(--num2);
 }
 .score_title2::after {
@@ -1336,7 +1336,7 @@ img {
 }
 
 .score_title3 {
-  animation: counter3 6s infinite ease-in-out;
+  animation: counter3 5s ease-in-out;
   counter-reset: num3 var(--num3);
 }
 .score_title3::after {
@@ -1359,7 +1359,7 @@ img {
 }
 
 .score_title4 {
-  animation: counter4 6s infinite ease-in-out;
+  animation: counter4 5s ease-in-out;
   counter-reset: num4 var(--num4);
 }
 .score_title4::after {
@@ -1416,6 +1416,7 @@ img {
     display: block;
   }
 }
+
 
 /* End score---------------------- */
 
@@ -1911,6 +1912,18 @@ form textarea:focus {
 
 .contat_socials ul > li a:hover {
   color: #00b2a0;
+}
+
+.inpt_name, .inpt_email, .inpt_message{
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  /* margin-top: 8px; */
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 @media (max-width: 1100px) {
