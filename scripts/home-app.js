@@ -122,13 +122,11 @@ function playVideo() {
     videoPlayer.play();
     playButton.style.display = 'none';
     videoThumbnail.style.display = 'none';
-    // videoPlayer.style.display = "block";
   });
 
   videoPlayer.addEventListener('pause', () => {
     playButton.style.display = 'block';
     videoThumbnail.style.display = 'block';
-    // videoPlayer.style.display = "none";
   });
 
 }

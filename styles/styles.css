@@ -273,7 +273,7 @@ header ul li a:hover {
   justify-content: center;
   align-items: center;
   height: 500px;
-  gap: 41px;
+  gap: 25px;
 }
 
 .mob_header_links ul li {
@@ -431,6 +431,10 @@ header ul li a:hover {
   .header_head,
   .sun {
     display: none;
+  }
+
+  ul > .sun {
+    display: block;
   }
 
   .hamburger .line {
