@@ -3,23 +3,24 @@
   src: url("../fonts/Ruberoid-Bold.woff2");
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
+  border-radius: 8px;
 }
 
 
 ::-webkit-scrollbar-track {
-  background: var(--body-bg-color);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scroll-bg-color);
+  background: #7c7c7c;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scroll-bg-hover-color);
-} */
+  background: #00b2a0;
+}
 
 :root {
   --bg-body-color: white;
